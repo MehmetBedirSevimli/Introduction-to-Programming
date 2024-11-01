@@ -1,6 +1,6 @@
 ﻿PROGRAMLAMAYA GİRİŞ DERSİ
 
-1. ÖDEVİ
+ÖDEVİ - 1
 
 Zaman adında bir struct oluşturun. 
 Bu struct içinde **int saat**, **int dakika**, **int saniye** ve **long toplam\_saniye** tipinde dört değişken olsun. 
