@@ -1,42 +1,41 @@
-﻿
+﻿PROGRAMLAMAYA GİRİŞ DERSİ
 
-INTRODUCTION TO PROGRAMMING
+1. ÖDEVİ
 
-HOMEWORK - 1
+Zaman adında bir struct oluşturun. 
+Bu struct içinde **int saat**, **int dakika**, **int saniye** ve **long toplam\_saniye** tipinde dört değişken olsun. 
 
-Create a struct called time.  Let 
-this struct contain four variables of type **int hour**, **int minute**, **int second** and **long total\_second**. 
+Klavyeden 12:59:59 formatında saat, dakika, saniye yi girerek bunları **struct Zaman** tipinde bir değişkende saklayın. 
 
-Enter the hours, minutes, seconds from the keyboard in the format 12:59:59 and store them in a variable of type **struct Time**. 
+**NOT: girilen saat,dakika,saniye değerlerinin 60'dan büyük eşit ve 0'dan küçük olup olmadığını kontrol ediniz.** 
 
-**NOTE: Check that the entered hour, minute, second values are greater than 60 and less than 0.** 
+Ana programda girilen zaman struct tipindeki değişkeni aşağıdaki formüle göre saniyeyi hesaplayarak toplam\_saniye değişkeninde saklayın. 
 
-Store the time struct type variable entered in the main program in the variable total\_seconds by calculating the seconds according to the formula below. 
+Toplam saniye formülü : 
 
-Total seconds formula: 
+long totalsecs= t1.saat\*3600+t1.dakika\*60+t1.saniye //t1 değişkeni struct zaman tipinde tanımlanmış kabul edilmiştir.
 
-long totalsecs= t1.hour\*3600+t1.minute\*60+t1.second //t1 variable is considered as struct time type.
+NOT: değişken isimlendirmeleri a,b,c,x,y,z,t1,t2 vs. gibi olmayacaktır.
 
-NOTE: variable names will not be a,b,c,x,y,z,t1,t2 etc.
+**Yaptığınız ödevin değerlendirilebilmesi için aşağıdaki ekran çıktısının aynısını yapmış olmanız gerekiyor. Farklı şekilde işlem yapmaya çalışmayınız.**
 
-**In order for your assignment to be evaluated, you must have made the same screen output as below. Do not try to process differently.**
+Örnek ekran çıktısı :
 
-Sample screen output :
+Saat:Dakika:Saniye şeklinde zamanı giriniz : 12:34:05
 
-Enter the time in Hours:Minutes:Seconds: 12:34:05
+Saniye olarak hesaplana değerler : 45245
 
-Values calculated in seconds: 45245
+NOT: Saniye:Dakika:Saniye şeklinde girilmeyen değerler kabul edilmeyecektir.Saati girin, dakikayı girin,saniyeyi girin diye yapmayın.
 
-NOTE: Values not entered as Seconds:Minutes:Seconds will not be accepted. Do not enter the hour, enter the minute, enter the second.
+Örnek ekran çıktısı :
 
-Sample screen output :
+Saat:Dakika:Saniye şeklinde zamanı giriniz : 55:104:505
 
-Enter the time in Hours:Minutes:Seconds : 55:104:505
+girilen saat değeri 55 yanlis girilmistir.
 
-the entered time value 55 has been entered incorrectly.
+girilen dakika değeri 104 yanlis girilmistir.
 
-the entered minute value 104 has been entered incorrectly.
+girilen saniye değeri 505 yanlis girilmistir.
 
-the entered second value 505 was entered incorrectly.
+PROGRAM sonu. 
 
-End of PROGRAM. 

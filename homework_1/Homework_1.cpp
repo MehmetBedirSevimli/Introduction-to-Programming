@@ -7,58 +7,61 @@ int main()
 {
     string timeInput;
 
-    char colon; // Will be used to capture ':' character
+    char colon; // ':' karakterini almak için kullanılacak
 
-    // Definition for time structure
-    struct timeStruct {
-        int hours;
-        int minutes;
-        int seconds;
-        long total_seconds;
+    // Zaman için yapı tanımı
+    struct zaman {
+        int saat;
+        int dakika;
+        int saniye;
+        long toplam_saniye;
     };
 
     while (1) {
 
-        cout << "Please enter the time (HH:MM:SS format): ";
+    
+    cout << "Lutfen saati (HH:MM:SS formatinda) girin: ";
 
-        cin >> timeInput;
+    cin >> timeInput;
 
-        stringstream timeStream(timeInput);
+    stringstream zamanAkisi(timeInput);
 
-        timeStruct time1;
+    zaman zaman1;
+            
+    // String'i parçalayarak zaman bilgilerini alıyoruz
+    zamanAkisi >> zaman1.saat >> colon;
+    zamanAkisi >> zaman1.dakika >> colon;
+    zamanAkisi >> zaman1.saniye;
 
-        // Parsing the string to get time values
-        timeStream >> time1.hours >> colon;
-        timeStream >> time1.minutes >> colon;
-        timeStream >> time1.seconds;
+    // Saat, dakika ve saniyenin geçerli olup olmadığını kontrol et
 
-        // Checking if hours, minutes, and seconds are valid
-
-        if ((time1.hours >= 24) || (time1.hours < 0)) {
-            cout << "The entered hour value " << time1.hours << " is incorrect." << endl;
-            continue;
-        }
-        if ((time1.minutes >= 60) || (time1.minutes < 0)) {
-            cout << "The entered minute value " << time1.minutes << " is incorrect." << endl;
-            continue;
-        }
-        if ((time1.seconds >= 60) || (time1.seconds < 0)) {
-            cout << "The entered second value " << time1.seconds << " is incorrect." << endl;
-            continue;
-        }
-
-        // If stringstream fails (invalid format entered)
-
-        if (timeStream.fail()) {
-            cout << "Invalid time format entered!" << endl;
-            continue;
-        }
-
-        // If everything is valid, calculate the total seconds
-        long total_seconds = time1.hours * 3600 + time1.minutes * 60 + time1.seconds;
-        cout << "Total value in seconds: " << total_seconds << endl;
-
-        // Break the loop after a valid input
-        break;
+    if ((zaman1.saat >= 24) || (zaman1.saat < 0)) {
+        cout << "Girilen saat degeri " << zaman1.saat << " yanlis girilmistir." << endl;
+        continue;
     }
+    if ((zaman1.dakika >= 60) || (zaman1.dakika < 0)) {
+        cout << "Girilen dakika degeri " << zaman1.dakika << " yanlis girilmistir." << endl;
+        continue;
+    }
+    if ((zaman1.saniye >= 60) || (zaman1.saniye < 0)) {
+        cout << "Girilen saniye degeri " << zaman1.saniye <<" yanlis girilmistir." << endl;
+        continue;
+    }
+
+    // Eğer stringstream başarısız olmuşsa (yanlış format girilmişse)
+
+    if (zamanAkisi.fail()) {
+        cout << "Gecersiz zaman formati girdiniz!" << endl;
+        continue;
+    }
+       
+        // Eğer her şey doğruysa, toplam saniyeyi hesapla
+        long toplam_saniye = zaman1.saat * 3600 + zaman1.dakika * 60 + zaman1.saniye;
+        cout << "Saniye olarak hesaplanan toplam deger: " << toplam_saniye << endl;
+
+        // Başarılı bir giriş sonrası döngüyü sonlandırabiliriz
+        break;
+
+    }
+
 }
