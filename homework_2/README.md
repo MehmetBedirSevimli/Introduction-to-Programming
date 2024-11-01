@@ -1,6 +1,6 @@
 ﻿PROGRAMLAMAYA GİRİŞ DERSİ
 
-ÖDEVİ I
+2. ÖDEVİ 
 
 1. Türkiye illerinin karakter uzunluklarının en az olanının ve en çok olanını bulunuz?
 1. En az karakterli ildeki karakter sayısı kadar il rastgele seçiniz? Örneğin VAN üç karakterli üç il rast gele seçilecek seçilen illerin aynı indisli elemanlarının üç harfli il ismi oluşturana kadar veya 100000 denemeye kadar deneme yapılacak,
